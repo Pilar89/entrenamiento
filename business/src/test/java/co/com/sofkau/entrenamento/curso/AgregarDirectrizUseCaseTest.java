@@ -29,9 +29,6 @@ class AgregarDirectrizUseCaseTest {
   @InjectMocks
   private AgregarDirectrizUseCase useCaseAgregarDirectriz;
 
-  @InjectMocks
-  private AgregarMentoriaUseCase useCaseAgregarMentoria;
-
   @Mock
   private DomainEventRepository repository;
 
@@ -39,7 +36,6 @@ class AgregarDirectrizUseCaseTest {
   void agregarUnaDirectrizHappyPass() {
     when(repository.getEventsBy("ddddd")).thenReturn(history());
     useCaseAgregarDirectriz.addRepository(repository);
-    ;
 
     CursoId coursoId = CursoId.of("ddddd");
     var directiz = new Directiz("eeeeee");
